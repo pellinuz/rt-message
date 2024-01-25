@@ -1,0 +1,10 @@
+#message-container {
+    border: 5px solid black;
+    border-radius: 50vh;
+    font-size: 30px;
+    max-width: 500px;
+    max-height: 200px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+}
