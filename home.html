@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Real-time Messaging App</title>
+		<link rel="stylesheet" href="style.home.css">
+	</head>
+
+	<body>
+		<center>
+			<h1>Real-time Messaging App</h1>
+
+			<input type="text" id="message-input" placeholder="Type your message..." onkeypress="handleKeyPress(event)">
+			<button onclick="sendMessage()">Send</button>
+			<div id="message-container"></div>
+
+			<script src="https://cdn.socket.io/4.0.1/socket.io.min.js"></script>
+			<script>
+				const socket = io();
+
+				// Update the message when it will arrive a new message from the server
+				socket.on('updateMessage', (message) => {
+					document.getElementById('message-container').innerText = message;
+				});
+
+				function sendMessage() {
+					const newMessage = document.getElementById('message-input').value;
+					// Send the message to the server
+					socket.emit('sendMessage', newMessage);
+				}
+
+				function handleKeyPress(event) {
+					if (event.key === 'Enter') {
+						sendMessage();
+					}
+				}
+			</script>
+		</center>
+	</body>
+
+</html>
