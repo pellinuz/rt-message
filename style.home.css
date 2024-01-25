@@ -1,0 +1,43 @@
+#message-container {
+	border: 5px solid black;
+	border-radius: 50vh;
+	font-size: 30px;
+	max-width: 500px;
+	max-height: 200px;
+	height: 40px;
+	align-items: center;
+	justify-content: center;
+}
+
+input#message-input {
+	border: none;
+	border-bottom: 2px solid black;
+	color: black;
+	transition: width 1s ease-in-out;
+	margin-bottom: 10px;
+	height: 20px;
+}
+
+input#message-input:active {
+	border: none;
+	border-bottom: 2px solid black;
+	color: black;
+	transition: width 1s ease-in-out;
+	margin-bottom: 10px;
+	height: 20px;
+}
+
+input#message-input:focus {
+	width: 20%;
+}
+
+button {
+	background-color: #04AA6D;
+	border: none;
+	border-radius: 50vh;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+}
